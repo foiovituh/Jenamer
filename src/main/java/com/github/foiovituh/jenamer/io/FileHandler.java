@@ -25,8 +25,9 @@ public class FileHandler {
                 .filter(File::isFile)
                 .collect(toSet())
                 .forEach(file -> {
+                    final String fileName = file.getName();
+                    final String extension = fileName.substring(fileName.lastIndexOf("."));
                     final String indexIncremented = String.valueOf(index.getAndIncrement());
-                    final String extension = file.getName().substring(file.getName().lastIndexOf("."));
                     
                     if (FIRST_FILE_INDEX.equals(indexIncremented)) {
                         this.path = file.getParent() + BAR;
