@@ -26,14 +26,12 @@ public class FileHandler {
                 .collect(toSet())
                 .forEach(file -> {
                     final String indexIncremented = String.valueOf(index.getAndIncrement());
-                    
                     final String extension = file.getName().substring(file.getName().lastIndexOf("."));
                     
                     if (FIRST_FILE_INDEX.equals(indexIncremented)) {
                         this.path = file.getParent() + BAR;
                     }
                     
-                    System.out.println(file.getName() + " -> " + path + template + separator + indexIncremented + extension);
                     file.renameTo(new File(path + template + separator + indexIncremented + extension));
                 });
     }
