@@ -13,6 +13,7 @@ Solve the following situation: you have a directory with MANY disorganized files
 - create a web(quarkus)/window(swing) version
 
 ### :link: Requirements
+- Maven
 - Java 8+
 - Windows/Linux
 - Terminal (console)
