@@ -1,6 +1,7 @@
 package com.github.foiovituh.jenamer.validation;
 
 import com.github.foiovituh.jenamer.io.Help;
+import static com.github.foiovituh.jenamer.utils.Text.alert;
 import static com.github.foiovituh.jenamer.validation.Message.DIRECTORY_NOT_FOUND;
 import static com.github.foiovituh.jenamer.validation.Message.MISSING_ARGUMENTS;
 import static com.github.foiovituh.jenamer.validation.Message.MUST_BE_DIRECTORY;
@@ -9,11 +10,6 @@ import java.util.stream.Stream;
 
 public final class Validator {
     private Validator() {}
-    
-    public static void alert(String message) {
-        System.out.println(message);
-        System.exit(0);
-    }
     
     public static void arguments(String[] arguments, int expected) {
         Stream.of(arguments).findFirst().ifPresent(Help::showReadmeMd);

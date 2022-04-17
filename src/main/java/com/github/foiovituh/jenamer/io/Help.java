@@ -1,7 +1,7 @@
 package com.github.foiovituh.jenamer.io;
 
+import static com.github.foiovituh.jenamer.utils.Text.alert;
 import static com.github.foiovituh.jenamer.validation.Message.README_NOT_FOUND;
-import static com.github.foiovituh.jenamer.validation.Validator.alert;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,14 +1,17 @@
 package com.github.foiovituh.jenamer.io;
 
+import static com.github.foiovituh.jenamer.utils.Text.Meta.DOT;
+import static com.github.foiovituh.jenamer.utils.Text.Meta.ZERO;
+import static com.github.foiovituh.jenamer.utils.Text.cutLeft;
+import static com.github.foiovituh.jenamer.utils.Text.info;
+import static com.github.foiovituh.jenamer.utils.Text.systemBar;
 import com.github.foiovituh.jenamer.validation.Validator;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicInteger;
-import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
 public class Renamer {
-    private static final String BAR = System.getProperties().getProperty("file.separator");
-    private static final String FIRST_FILE_INDEX= "0";
     private final File element;
     private String path;
     
@@ -19,21 +22,28 @@ public class Renamer {
     }
     
     public void renameAllFilesTo(String template, String separator) {
-        final AtomicInteger index = new AtomicInteger(0);
+        final AtomicInteger atom = new AtomicInteger(0);
+        final String bar = systemBar();
         
         Stream.of(element.listFiles())
                 .filter(File::isFile)
-                .collect(toSet())
+                .collect(toList())
                 .forEach(file -> {
-                    final String fileName = file.getName();
-                    final String extension = fileName.substring(fileName.lastIndexOf("."));
-                    final String indexIncremented = String.valueOf(index.getAndIncrement());
+                    final String name = file.getName();
+                    final String type = name.substring(name.lastIndexOf(DOT.get()));
+                    final String index = String.valueOf(atom.getAndIncrement());
                     
-                    if (FIRST_FILE_INDEX.equals(indexIncremented)) {
-                        this.path = file.getParent() + BAR;
+                    if (ZERO.get().equals(index)) {
+                        this.path = file.getParent() + bar;
                     }
                     
-                    file.renameTo(new File(path + template + separator + indexIncremented + extension));
+                    Stream.of(path + template + separator + index + type)
+                            .peek(newPath -> info(name, " -> ", cutLeft(newPath, bar)))
+                            .findFirst()
+                            .map(File::new)
+                            .ifPresent(newFile -> {
+                                file.renameTo(newFile);
+                            });
                 });
     }
 }
