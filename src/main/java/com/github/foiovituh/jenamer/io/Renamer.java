@@ -6,13 +6,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static java.util.stream.Collectors.toSet;
 import java.util.stream.Stream;
 
-public class FileHandler {
+public class Renamer {
     private static final String BAR = System.getProperties().getProperty("file.separator");
     private static final String FIRST_FILE_INDEX= "0";
     private final File element;
     private String path;
     
-    public FileHandler(String element) {
+    public Renamer(String element) {
         this.element = new File(element);
         
         Validator.file(this.element);

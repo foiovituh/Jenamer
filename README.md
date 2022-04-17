@@ -26,3 +26,4 @@ Solve the following situation: you have a directory with MANY disorganized files
 ### :busts_in_silhouette: Do you want help me?
 
 If you have any ideas or wish to contribute to the project, contact me on Twitter @foiovituh or send me a pull request! :)
+
