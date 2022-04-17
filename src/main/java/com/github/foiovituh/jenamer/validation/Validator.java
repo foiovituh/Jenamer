@@ -1,7 +1,7 @@
 package com.github.foiovituh.jenamer.validation;
 
 import com.github.foiovituh.jenamer.io.Help;
-import static com.github.foiovituh.jenamer.validation.Message.FILE_NOT_FOUND;
+import static com.github.foiovituh.jenamer.validation.Message.DIRECTORY_NOT_FOUND;
 import static com.github.foiovituh.jenamer.validation.Message.MISSING_ARGUMENTS;
 import static com.github.foiovituh.jenamer.validation.Message.MUST_BE_DIRECTORY;
 import java.io.File;
@@ -25,7 +25,7 @@ public final class Validator {
     
     public static void file(File file) {
         if (!file.exists()) {
-            alert(FILE_NOT_FOUND.getWithHelp());
+            alert(DIRECTORY_NOT_FOUND.getWithHelp());
         } else if (!file.isDirectory()) {
             alert(MUST_BE_DIRECTORY.getWithHelp());
         }
