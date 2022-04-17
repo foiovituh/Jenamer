@@ -12,7 +12,7 @@ import static java.util.stream.Collectors.toSet;
 import java.util.stream.Stream;
 
 public final class Help {
-    public static final Set<String> HELP_ARGUMENTS = Stream.of("--help", "--h")
+    private static final Set<String> HELP_ARGUMENTS = Stream.of("--help", "--h")
             .collect(toSet());
         
     private Help() {}
