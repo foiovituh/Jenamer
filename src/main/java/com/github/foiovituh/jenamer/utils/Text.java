@@ -3,7 +3,9 @@ package com.github.foiovituh.jenamer.utils;
 import static java.util.stream.Collectors.joining;
 import java.util.stream.Stream;
 
-public class Text {
+public final class Text {
+    private Text() {}
+    
     public enum Meta {
         DOT("."),
         ZERO("0"),
