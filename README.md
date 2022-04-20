@@ -2,7 +2,7 @@
 Mass File Renamer developed in Java 17!
 
 ![example](https://user-images.githubusercontent.com/68431603/163689280-baca9f6e-e81d-4e03-a2f7-e4a13d8af086.gif)
-<hr>
+<hr/>
 ### :pushpin: Objective
 Solve the following situation: you have a directory with MANY disorganized files, how much time/effort would it take to rename them one by one? Jenamer renames all files based on a template name + separator + index.
 
@@ -11,13 +11,13 @@ Solve the following situation: you have a directory with MANY disorganized files
 - make separator optional
 - allow setting the index position
 - create a web(quarkus)/window(swing) version
-<hr>
+<hr/>
 ### :link: Requirements
 - Maven
 - Java 8+
 - Windows/Linux
 - Terminal (console)
-<hr>
+<hr/>
 ### :cd: Setup
 1- Open pom.xml and configure your Java version on these lines:
 ```
@@ -27,7 +27,7 @@ Solve the following situation: you have a directory with MANY disorganized files
 ```
 
 2- Via terminal navigate to the Jenamer root directory and run `mvn install`
-<hr>
+<hr/>
 ### :arrow_forward: How to use
 `java -jar [jar path] [first argument] [second argument] [third argument]`
 
@@ -36,7 +36,7 @@ Solve the following situation: you have a directory with MANY disorganized files
 - Third argument: index separator, example -> "-"
 
 Example: `java -jar .\target\Jenamer-1.0-SNAPSHOT.jar "C:\Users\vitor\Desktop\Test" file -`
-<hr>
+<hr/>
 ### :busts_in_silhouette: Do you want help me?
 
 If you have any ideas or wish to contribute to the project, contact me on Twitter @foiovituh or send me a pull request! :)
