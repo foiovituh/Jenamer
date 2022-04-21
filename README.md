@@ -42,7 +42,7 @@ Solve the following situation: you have a directory with MANY disorganized files
 - Second argument: template name, example -> "file"
 - Third argument: index separator, example -> "-"
 
-Example: `java -jar .\target\Jenamer-1.0-SNAPSHOT.jar "C:\Users\vitor\Desktop\Test" file -`
+Command: `java -jar .\target\Jenamer-1.0-SNAPSHOT.jar "C:\Users\vitor\Desktop\Test" file -`
 
 ---
 
