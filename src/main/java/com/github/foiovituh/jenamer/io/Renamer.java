@@ -38,7 +38,7 @@ public class Renamer {
                     }
                     
                     Stream.of(path + template + separator + index + type)
-                            .peek(newPath -> info(name, " -> ", cutLeft(newPath, bar)))
+                            .peek(newPath -> info(name, " -> ", cutLeft(bar, newPath)))
                             .findFirst()
                             .map(File::new)
                             .ifPresent(newFile -> {

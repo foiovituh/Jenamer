@@ -24,14 +24,14 @@ public final class Text {
     }
     
     public static final void info(String ... elements) {
-        System.out.println(Stream.of(elements).collect(joining()));
+        info(Stream.of(elements).collect(joining()));
     }
     
     public static final void info(String message) {
         System.out.println(message);
     }
     
-    public static String cutLeft(String text, String lastIndexOf) {
+    public static String cutLeft(String lastIndexOf, String text) {
         return text.substring(text.lastIndexOf(lastIndexOf) + 1);
     }
     
