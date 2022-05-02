@@ -1,8 +1,6 @@
 # :file_folder: Jenamer
 Mass File Renamer developed in Java 17!
 
-![example](https://user-images.githubusercontent.com/68431603/163689280-baca9f6e-e81d-4e03-a2f7-e4a13d8af086.gif)
-
 ---
 
 ### :pushpin: Objective
